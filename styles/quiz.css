@@ -1,0 +1,485 @@
+@charset "UTF-8";
+/**
+    Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+    Убираем внутренние отступы слева тегам списков,
+    у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+    Убираем внешние отступы body и двум другим тегам,
+    у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+    Убираем внешние отступы вертикали нужным тегам,
+    у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+    Убираем стандартный маркер маркированному списку,
+    у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+    Обнуляем вертикальные внешние отступы параграфа,
+    объявляем локальную переменную для внешнего отступа вниз,
+    чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+    Внешний отступ вниз для параграфа без атрибута class,
+    который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+    Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+    Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+  height: 100%;
+  /**
+   Убираем скачок интерфейса по горизонтали
+   при появлении / исчезновении скроллбара
+  */
+  scrollbar-gutter: stable;
+}
+
+/**
+    Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+  min-height: 100%;
+  /**
+   Унифицированный интерлиньяж
+  */
+  line-height: 1.5;
+}
+
+/**
+    Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+    Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+    Приводим к единому цвету svg-элементы
+    (за исключением тех, у которых уже указан
+    атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not([fill=none],
+[fill^=url])) {
+  fill: currentColor;
+}
+
+/**
+    Приводим к единому цвету svg-элементы
+    (за исключением тех, у которых уже указан
+    атрибут stroke со значением 'none')
+ */
+:where([stroke]:not([stroke=none])) {
+  stroke: currentColor;
+}
+
+/**
+    Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+    Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+    Удаляем все анимации и переходы для людей,
+    которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-main: #1F2022;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-light-alt: #E1EBFB;
+  --color-light-h: #BFCDD4;
+  --color-accent: rgba(245, 1, 1, 0.5);
+  --color-accent-light: #f50101;
+  --color-grey: #475e69;
+  --color-grey-alt: #333E44;
+  --color-grey-light: #c4c4c4;
+  --color-gold: #ffc942;
+  --color-green: #21D789;
+  --color-blue: #009BFF;
+  --border-radius-menu-left: 10px 1000px 10px 1000px;
+  --border-radius-menu-right: 1000px 10px 1000px 10px;
+  --border-radius-keys: 4px;
+  --border-radius-actor: 30px;
+  --border-radius-btn: 8px;
+  --border-radius-profile: 50px;
+  --font-family-base: "Poppins", sans-serif;
+  --font-family-rarely: "Montserrat", sans-serif;
+  --container-width: 1240px;
+  --container-padding-x: 100px;
+  --section-margin-y: 40px;
+  --button-height-normal: 45px;
+  --button-height-small: 33px;
+  --transition-duration: 0.5s;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+html {
+  scrollbar-color: #f50101 #000000;
+}
+
+body {
+  font-size: clamp(14px, 1.6666666667vw, 24px);
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.28;
+  background-color: var(--color-main);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.question {
+  margin: 100px auto;
+  width: 1200px;
+  height: 600px;
+  border-radius: 30px;
+  background: var(--color-dark);
+}
+.question__group-heading {
+  display: flex;
+}
+.question__group-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 30px 40px;
+  min-width: 60px;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  color: var(--color-light);
+}
+.question__group-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 40px 40px 30px 0;
+  width: 1060px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-light);
+}
+.question__group-body {
+  display: flex;
+}
+.question__image {
+  width: 490px;
+  height: 490px;
+  margin-left: 40px;
+  margin-top: 0;
+}
+.question__answers {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 40px 0;
+  gap: 40px;
+}
+.question__answers-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  height: 80px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.question__answers-radio {
+  display: none;
+}
+.question__answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 80px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: var(--color-accent);
+  color: var(--color-light);
+}
+.question__answer:hover {
+  background: var(--color-main);
+  transition: background-color 0.3s linear;
+}
+.question__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 40px 65px 20px;
+  width: 60px;
+  height: 400px;
+  border-radius: 15px;
+  background-color: var(--color-main);
+  color: var(--color-accent);
+  cursor: pointer;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.question__submit:hover {
+  background-color: var(--color-dark);
+  border: var(--color-light) 1px solid;
+}
+
+.question__answer:has(.question__answers-radio:checked) .question__answers-label {
+  border-radius: 15px;
+  background: var(--color-main);
+}
+
+.question__submit.activated {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s;
+}
+
+.result {
+  max-width: 600px;
+  min-height: 300px;
+  border-radius: 30px;
+  border: 10px solid var(--color-accent);
+  margin: 200px auto;
+  background: var(--color-dark);
+}
+.result_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.result__heading {
+  margin: 20px 0 0 0;
+  width: 600px;
+  height: 60px;
+  font-size: 36px;
+  text-align: center;
+  color: var(--color-light);
+}
+.result__descriptor {
+  text-align: center;
+  margin: 20px 0;
+  width: 500px;
+  height: 60px;
+  font-size: 24px;
+  color: var(--color-light);
+}
+.result__restart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  width: 360px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 24px;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+}
+
+/*# sourceMappingURL=quiz.css.map */

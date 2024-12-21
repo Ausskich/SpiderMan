@@ -1,0 +1,45 @@
+.result{
+    max-width: 600px;
+    min-height: 300px;
+    border-radius: 30px;
+    border: 10px solid var(--color-accent);
+    margin: 200px auto;
+    background: var(--color-dark);
+
+    &_wrapper{
+    @include flex-center;
+
+    flex-direction: column;
+    }
+
+    &__heading{
+        margin: 20px 0 0 0;
+        width: 600px;
+        height: 60px;
+        font-size: 36px;
+        text-align: center;
+        color: var(--color-light);
+    }
+
+    &__descriptor{
+        text-align: center;
+        margin: 20px 0;
+        width: 500px;
+        height: 60px;
+        font-size: 24px;
+        color: var(--color-light);
+    }
+
+    &__restart{
+        @include flex-center;
+
+        margin: 20px 0;
+        width: 360px;
+        height: 40px;
+        border-radius: 30px;
+        font-size: 24px;
+        background-color: var(--color-accent);
+        color: var(--color-light);
+    }
+
+}

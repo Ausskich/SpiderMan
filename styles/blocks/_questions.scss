@@ -1,0 +1,120 @@
+.question{
+    margin: 100px auto;
+    width: 1200px;
+    height: 600px;
+    border-radius: 30px;
+    background: var(--color-dark);
+
+    &__group{
+
+        &-heading{
+            display: flex;
+        }
+
+        &-number{
+            @include flex-center;
+
+            margin: 40px 0 30px 40px;
+            min-width: 60px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            color: var(--color-light);
+        }
+
+        &-name{
+            @include flex-center;
+
+            text-align: center;
+            margin: 40px 40px 30px 0;
+            width: 1060px;
+            height: 40px;
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+            color: var(--color-light);
+        }
+
+        &-body{
+            display: flex;
+        }
+    }
+
+    &__image{
+        width: 490px;
+        height: 490px;
+        margin-left: 40px;
+        margin-top: 0;
+    }
+
+    &__answers{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 40px 0;
+        gap: 40px;
+
+        &-label{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 550px;
+            height: 80px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        &-radio {
+            display: none;
+        }
+    }
+
+    &__answer{
+        @include flex-center;
+
+        width: 550px;
+        height: 80px;
+        border-radius: 15px;
+        cursor: pointer;
+        background: var(--color-accent);
+        color: var(--color-light);
+
+        &:hover{
+            background: var(--color-main);
+            transition: background-color 0.3s linear;
+        }
+    }
+
+    &__submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 25px 40px 65px 20px;
+        width: 60px;
+        height: 400px;
+        border-radius: 15px;
+        background-color: var(--color-main);
+        color: var(--color-accent);
+        cursor: pointer;
+        opacity: 0.5;
+        pointer-events: none;
+        transition: opacity 0.3s;
+
+        &:hover{
+            background-color: var(--color-dark);
+            border: var(--color-light) 1px solid ;
+        }
+    }
+
+
+}
+
+.question__answer:has(.question__answers-radio:checked) .question__answers-label{
+    border-radius: 15px;
+    background: var(--color-main);
+}
+
+.question__submit.activated {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s;
+}
