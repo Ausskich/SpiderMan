@@ -1,0 +1,57 @@
+.enemies{
+    margin-top: 40px;
+
+    &__wrapper{
+        background-color: var(--color-dark);
+    }
+
+    &__first-list{
+        display: flex;
+        justify-content: center;
+        gap: 120px;
+        margin-bottom: 50px;
+        border-bottom: 5px solid #fff;
+        background-color: black;
+    }
+
+    &__second-list{
+        display: flex;
+        justify-content: center;
+        gap: 120px;
+        margin-bottom: 50px;
+        border-bottom: 5px solid #fff;
+        background-color: black;
+    }
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 300px;
+        border-radius: 8px;
+        background-color: rgba(245, 1, 1, 0.5);
+    }
+
+    &__pict{
+        margin: 20px 20px 0 20px;
+        border-radius: 5px;
+    }
+
+    &__pict:hover{
+        scale: 1.15;
+        transition: var(--transition-duration)
+    }
+
+    &__heading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 200px;
+        height: 80px;
+        font-size: 24px;
+        color: #BFCDD4;
+    }
+}

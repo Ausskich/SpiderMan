@@ -1,0 +1,43 @@
+.film{
+    display: flex;
+    margin: 40px auto;
+    padding: 40px;
+    width: 1200px;
+    height: 530px;
+    background-color: var(--color-dark);
+    
+    &__body{
+        @include flex-center;
+        
+        flex-direction: column;
+        width: 780px;
+        height: 450px;
+        margin-left: 40px;
+        background-color: var(--color-light-alt);
+    }
+
+    &__header-item{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        // margin-top: 20px;
+        width: 100%;
+        height: 40px;
+        font-size: 32px;
+        color: var(--color-dark);
+    }
+
+    &__descriptor-item{
+        @include flex-center;
+        
+        margin-top: -25px;
+        flex-direction: column;
+        font-weight: 500;
+        width: 740px;
+        height: 360px;
+        padding: 0 10px;
+        text-align: center;
+        font-size: 20px;
+        color: var(--color-grey-alt);
+    }
+}

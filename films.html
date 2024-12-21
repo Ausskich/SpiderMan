@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Films</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./styles/films.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <nav class="header__menu hidden-mobile">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item header__menu-item-left">
+                        <a class="header__menu-link" href="./super_hero.html">Супергерой</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item-left">
+                        <a class="header__menu-link" href="./films.html">Фильмы</a>
+                    </li>
+                    <li class="header__logo logo">
+
+                        <a class="header__logo-link" href="./index.html">
+                            <img class="logo__image" src="images/header__logo.svg" alt="Spider" width="190" height="72"
+                                loading="lazy">
+                        </a>
+
+                    </li>
+                    <li class="header__menu-item header__menu-item-right">
+                        <a class="header__menu-link" href="/">Опрос</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item-right">
+                        <a class="header__menu-link" href="/">Персонажи</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button id="profileButton" class="header__button button button--transparent hodden-mobile"
+                    type="button">
+                <img src="images/user.svg" alt="profile" width="44" height="44" loading="lazy">
+            </button>
+            
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay">
+        <div class="modal" id="profileModal">
+            <div class="modal__body">
+                <div class="modal__wrapper-close">
+                    <button class="modal__close" id="closeModal">
+                        <div class="modal__img">
+                            <img class="modal__pict" src="./images/profile/x.svg" alt="cross" width="30" height="30" loading="lazy">
+                        </div>
+                    </button>
+                </div>
+            
+                <h1 class="modal__heading">Профиль</h1>
+            
+                <div class="modal__list">
+                    <p class="modal__item modal__item-min">Имя:
+                        <span class="user-data" id="username"></span>
+                    </p>
+            
+                    <p class="modal__item modal__item-big">Дата рождения:
+                        <span class="user-data" id="birth"></span>
+                    </p>
+            
+                    <p class="modal__item modal__item-min">Пол:
+                        <span class="user-data" id="gender"></span>
+                    </p>
+            
+                    <p class="modal__item modal__item-min">Последний результат теста:
+                        <span class="user-data" id=""></span>
+                    </p>
+                </div>
+            
+                <div class="modal__wrapper-logout">
+                    <button class="modal__logout" id="logoutButton">Выйти</button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+    <main class="content">
+
+        <section class="heading">
+            <h1 class="heading__first heading__first--full heading__first--full-first">Все фильмы</h1>
+        </section>
+
+        <section class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slider__background-first">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">1 / 8</div>
+                            <img class="slider__pict" src="./images/film/2002(1).svg" alt="first_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Человек-паук (2002)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-second">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">2 / 8</div>
+                            <img class="slider__pict" src="./images/film/2004(2).svg" alt="second_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Человек-паук 2 (2004)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-third">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">3 / 8</div>
+                            <img class="slider__pict" src="./images/film/2007(3).svg" alt="third_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Человек-паук 3: Враг в отражении (2007)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-fourth">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">4 / 8</div>
+                            <img class="slider__pict" src="./images/film/2012(4).svg" alt="fourth_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Новый Человек-паук (2012)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-fifth">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">5 / 8</div>
+                            <img class="slider_pict" src="./images/film/2014(5).svg" alt="fifth_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Новый Человек-паук. Высокое напряжение (2014)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-sixth">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">6 / 8</div>
+                            <img class="slider_pict" src="./images/film/2017(6).svg" alt="sixth_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Человек-паук: Возвращение домой (2017)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-seventh">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">7 / 8</div>
+                            <img class="slider_pict" src="./images/film/2019(7).svg" alt="seventh_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Человек-паук: Вдали от дома (2019)</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="swiper-slide slider__background-eighth">
+                    <div class="slider__wrapper container">
+                        <div class="slider__group">
+                            <div class="slider__number">8 / 8</div>
+                            <img class="slider_pict" src="./images/film/2021(8).svg" alt="eighth_pict" width="300" height="450"
+                                loading="lazy">
+                            <div class="slider__heading">Человек-паук: Нет пути домой (2021)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="swiper-pagination"></div>
+        
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </section>
+        
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Человек-паук (2002)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2002(1).svg" alt="2001" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Человек-паук» </h1>
+                <p class="film__descriptor-item">
+                    Питер Паркер — обычный школьник, неудачник и зануда. <br />
+                    Он живет обычной жизнью, тайно мечтая о соседке Мэри Джейн Уотсон.<br />
+                    Питера не уважают одноклассники, у него нет друзей, но однажды героя<br />
+                    кусает паук-мутант, и неприметный ботаник превращаетс<br />
+                    в суперчеловека.<br />
+                    Теперь он способен лазить по стенам, передвигаться с невероятной<br />
+                    скоростью и выбрасывать прочную сталь паутину.<br />
+                    Жизнь превращается в сказку. Впрочем, Человек-паук не успевает<br />насладиться новыми возможностями: дает
+                    о себе знать
+                    и новая зона<br />
+                    ответственности, и в городе объявляется злодей по прозвищу Зеленый<br />
+                    Гоблин, бросивший вызов нашему герою.
+                </p>
+            </div>
+        </section>
+
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Человек-паук 2 (2004)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2004(2).svg" alt="2004" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Человек-паук 2» </h1>
+                <p class="film__descriptor-item">
+                    Прошло два года. Питер Паркер изо всех сил старается балансировать<br /> между жизнью Человека-Паука и
+                    обычного студента. Его
+                    секреты ставят<br /> под угрозу отношения с близкими: любовь к Мэри-Джейн становится<br /> сильнее, дружба с
+                    Гарри осложняется
+                    желанием отомстить за смерть отца,<br /> а тетя Мэй начинает что-то подозревать.<br />
+                    Тем временем в городе появляется новый злодей — доктор Отто Октавиус,<br /> обладающий гениальным умом и
+                    механическими
+                    конечностями.<br />
+                    Питер должен преодолеть внутренние конфликты, разобраться в своих<br /> чувствах и использовать все свои
+                    суперспособности,
+                    чтобы одолеть<br /> опасного врага, спасти близких и вновь обрести гармонию между своими<br /> двумя
+                    жизнями.
+                </p>
+            </div>
+        </section>
+
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Человек-паук 3: Враг в отражении (2007)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2007(3).svg" alt="2007" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Враг в отражении»</h1>
+                <p class="film__descriptor-item">
+                    Прошло три года с тех пор, как Питер Паркер завязал с борьбой за<br />
+                    справедливость и мир во всем мире.<br />
+                    Жители Нью-Йорка наконец-то признали в нем своего защитника,<br />
+                    отношения с Мэри-Джейн наладились.<br />
+                    Но лучший друг Питера Гарри Осборн до сих пор уверен, что именно<br /> Человек-паук виновен в смерти его
+                    отца, и собирается
+                    отомстить<br /> супергерою в обличии Нового Гоблина.
+                    Ко всему прочему, в городе некстати появляется новый могущественный<br /> злодей — Песочный человек. Однако
+                    же главным врагом
+                    Паркера<br /> до сих пор остается он сам..
+                </p>
+            </div>
+        </section>
+
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Новый Человек-паук (2012)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2012(4).svg" alt="2012" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Новый Человек-паук»</h1>
+                <p class="film__descriptor-item">
+                    Обычного школьника Питера Паркера, которого все считали неудачником<br />
+                    и занудой, в один прекрасный день кусает
+                    паук-мутант, после чего<br /> с нескладным юношей происходит фантастическая метаморфоза.<br /> Теперь
+                    он может вскарабкиваться
+                    на стены любой высоты, обладает<br /> недюжинной силой и может выбрасывать прочную паутину. Правда,
+                    супервозможности<br />
+                    накладывают определенную ответственность: теперь Питер вынужден<br /> спасать родной город от не менее
+                    могущественных, чем он,
+                    злодеев.<br /> Человек-паук должен победить зло.
+                    «Новый Человек-паук» (2012) — перезапуск трилогии Сэма Рэйми, ставший<br /> четвертым фильмом о персонаже
+                    Marvel Comics
+                    Человеке-пауке.
+                </p>
+            </div>
+        </section>
+
+        <section class="space"></section>
+        
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Новый Человек-паук. Высокое напряжение (2014)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2014(5).svg" alt="2014" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Высокое напряжение»</h1>
+                <p class="film__descriptor-item">
+                    Продолжение приключений Человека-паука. Питер Паркер под маской<br /> Человека-паука продолжает спасать мир
+                    от злодеев и
+                    преступников,<br /> а свободное время проводит с возлюбленной Гвен. Школьная пора близится к концу, и
+                    впереди героев ждет
+                    взрослая жизнь.<br />
+                    Питер помнит, что дал отцу Гвен слово уйти из ее жизни, чтобы не<br /> подвергать девушку опасности. Однако
+                    сдержать это
+                    обещание непросто.<br /> Судьба готовит Питеру сюрпризы: новый противник — Электро, встреча с<br /> Гарри
+                    Озборном и тайны о прошлом
+                    своей семьи. «Новый Человек-паук.<br />
+                    <br />
+                    Высокое напряжение» имеет самый продолжительный хронометраж из<br /> всех фильмов о Человеке-пауке.
+                </p>
+            </div>
+        </section>
+
+        <section class="space"></section>
+        
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Человек-паук: Возвращение домой (2017)</h1>
+        </section>
+
+        <div class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2017(6).svg" alt="2017" width="300" height="450" loading="lazy">
+            </div>
+        
+            <section class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Возвращение домой»</h1>
+                <p class="film__descriptor-item">
+                    После исторической встречи с командой Мстителей Питер Паркер<br /> возвращается домой, стараясь зажить
+                    обычной жизнью под
+                    опекой своей<br /> тети Мэй. Но теперь за Питером приглядывает еще кое-кто — Тони Старк<br /> видел
+                    Человека-Паука в деле и должен
+                    стать его наставником.<br />
+                    <br />
+                    Когда новый злодей Стервятник угрожает уничтожить все, что дорого<br /> Питеру, приходит время доказать
+                    всем, что такое
+                    настоящий супергерой.<br />
+                    «Человек-паук: Возвращение домой» — американский супергеройский<br /> фильм по мотивам комиксов
+                    Marvel.<br />
+                    <br />
+                    Фильм является вторым перезапуском франшизы о Человеке-пауке.
+                </p>
+            </section>
+        </div>
+
+        <section class="space"></section>
+        
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Человек-паук: Вдали от дома (2019)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2019(7).svg" alt="2019" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Вдали от дома» »</h1>
+                <p class="film__descriptor-item">
+                    Продолжение истории о Человеке-пауке, действие которой<br /> разворачивается за пределами Нью-Йорка, в городах Европы.<br /> Питер
+                    Паркер, который пытается быть обычным школьником<br /> с обычными интересами, вынужден вновь надеть костюм, чтобы вместе с
+                    Мистериосразиться с монстрами-элементалами.<br />
+                    <br />
+                    Во время путешествия Питер также сталкивается с личными испытаниями,<br /> пытаясь наладить отношения с друзьями и выразить
+                    свои чувства к<br /> Мишель Джонс. Однако опасности следуют за ним повсюду, ставя под<br /> угрозу не только его жизнь, но и жизнь
+                    близких. Кроме того,<br /> Питеру придется выяснить, можно ли доверять новому союзнику.
+                </p>
+            </div>
+        </section>
+
+        <section class="space"></section>
+        
+        <section class="heading">
+            <h1 class="heading__first heading__first--full">Человек-паук: Нет пути домой (2021)</h1>
+        </section>
+
+        <section class="film container">
+            <div class="film__image">
+                <img class="film__pict" src="./images/film/2021(8).svg" alt="2019" width="300" height="450" loading="lazy">
+            </div>
+        
+            <div class="film__body">
+                <h1 class="film__header-item">Сюжет фильма «Вдали от дома»</h1>
+                <p class="film__descriptor-item">
+                    Теперь, когда весь мир узнал, кто скрывается за маской Человека-паука,<br /> жизнь Питера Паркера и его
+                    близких меняется не в
+                    лучшую сторону.<br /> Не придумав ничего лучше, Паркер обращается за помощью<br /> к Доктору Стрэнджу. Но в
+                    процессе заклинания,
+                    которое должно было<br /> заставить человечество забыть о Питере, что-то идет не так,<br /> в результате
+                    чего открывается портал в
+                    Мультивселенную.<br />
+                    <br />
+                    Герою предстоит не только встретиться со всеми суперзлодеями,<br /> с которыми боролись Человеки-пауки из
+                    альтернативных
+                    реальностей,<br /> но и объединиться с ними, чтобы восстановить порядок.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <div onclick="scrollToTop()" id="scrollTop" class="scrollTop">Вверх</div>
+
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__main">
+
+                <div class="footer__contacts">
+                    <h2 class="footer__header">Contacts</h2>
+                    <p class="footer__contacts-item">
+                        <a class="footer__contacts-link" href="mailto:kakoi-to_tam@sobaka.com">
+                            kakoi-to_tam@sobaka.com
+                        </a>
+                    </p>
+                    <p class="footer__contacts-item">
+                        <a class="footer__contacts-link" href="tel:+91237231819">
+                            +9 (123) 723-18-19
+                        </a>
+                    </p>
+                </div>
+
+                <div class="footer__social">
+                    <h2 class="footer__header">Follow Us</h2>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="http://" target="_blank"
+                                aria-label="Follow us on Instagram">
+                                <img class="footer__social-icon" src="./images/social/instagram.svg"
+                                    alt="Instagram icon" width="32" height="32" loading="lazy">
+                            </a>
+                            <span class="footer__social-description">spider-man</span>
+                        </li>
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="http://" target="_blank"
+                                aria-label="Follow us on Twitter">
+                                <img class="footer__social-icon" src="./images/social/twitter.svg" alt="Twitter icon"
+                                    width="32" height="32" loading="lazy">
+                            </a>
+                            <span class="footer__social-description">spider-man</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                <p class="footer__copyright-text">
+                    &copy; 2024 Bayguzhinov. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/reDirecton.js"></script>
+    <script src="script/user.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script/slider.js"></script>
+    <script src="script/scrollTop.js"></script>
+</body>
+
+</html>

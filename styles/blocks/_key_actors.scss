@@ -1,0 +1,90 @@
+.cards{
+    display: flex;
+    @include flex-center(false);
+
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card{
+    display: flex;
+    max-width: 500px;
+    min-width: 500px;
+    height: 194px;
+    margin: 20px 20px;
+    border-radius: var(--border-radius-btn);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+
+    &__img{
+        margin: 32px 10.5px 42px 25px;
+        width: 120px;
+        height: 120px;
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header{
+        display: inline-flex;
+
+        &-name{
+            margin: 24px 17px 8px 10.5px;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-light-h);
+        }
+
+        &-role{
+            margin: 30px 25px 11px 17px;
+            font-size: 18px;
+            font-weight: 400;
+
+            &--spider {
+                color: var(--color-accent-light);
+            }
+
+            &--aunt {
+                margin-left: 41px;
+                color: var(--color-green);
+            }
+
+            &--beloved {
+                margin-left: 125px;
+                color: var(--color-gold);
+            }
+
+            &--editor {
+                margin-left: 42px;
+                color: var(--color-blue);
+            }
+        }
+    }
+
+    &__descriptor{
+        margin: 3px 25px 11px 10.5px;
+        line-height: 1.5;
+        font-size: 16px;
+        color: var(--color-grey);
+    }
+
+    &__keys{
+        display: inline-flex;
+
+        &-item{
+            display: flex;
+            align-items: center;
+            margin: 5px 20px 30px 10.5px;
+            padding: 0 10px;
+            width: auto;
+            height: 32px;
+            border-radius: 4px;
+            color: var(--color-dark);
+            background-color: var(--color-light-alt);
+        }
+    }
+
+}

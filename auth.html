@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/auth.css">
+</head>
+
+<body>
+    
+    <section class="auth">
+        <form id="authForm" class="auth__form" novalidate>
+            <h1 class="auth__heading">Авторизация</h1>
+            <div class="auth__group">
+                <label for="login" class="auth__label">Логин:</label>
+                <input id="login" type="text" class="auth__input">
+                <span id="login-error" class="auth__error"></span>
+            </div>
+            <div class="auth__group">
+                <label class="auth__label">Дата рождения:</label>
+                <div class="auth__select-group">
+                    <select name="day" id="birth-day" class="auth__select auth__select-day"></select>
+                    <select name="month" id="birth-month" class="auth__select auth__select-month"></select>
+                    <select name="year" id="birth-year" class="auth__select auth__select-year"></select>
+                </div>
+                <span id="birth-error" class="auth__error"></span>
+            <div class="auth__group">
+                <label for="gender" class="auth__label">Пол:</label>
+                <select id="gender" class="auth__select" required>
+                    <option value="" disabled selected>Выберите пол</option>
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                </select>
+            </div>
+            <span id="gender-error" class="auth__error"></span>
+            <button type="submit" class="auth__button">Войти</button>
+        </form>
+    </section>
+
+    <script src="./script/auth.js"></script>
+</body>
+</html>

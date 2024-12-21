@@ -1,0 +1,45 @@
+.actors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 155px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &__item{
+        max-width: 310px;
+        height: 528px;
+    }
+
+    &__name{
+        width: 310px;
+        padding-bottom: 15px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 500;
+        color: #E1EBFB;
+    }
+
+    &__image{
+        border-radius: 30px;
+    }
+
+    &__info{
+        margin-top: 25px;
+
+        &-header{
+            font-size: 20px;
+            color: #BFCDD4;
+        }
+
+        &-descriptor{
+            font-size: 20px;
+            color: #475E69;
+        }
+
+        &-section--place{
+            text-align: right;
+        }
+    }
+}
+

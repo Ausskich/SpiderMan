@@ -1,0 +1,99 @@
+input,
+select,
+option{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.auth{
+    @include flex-center;
+    @include slider-bg;
+    background-image: url(../images/auth/auth-bg.svg);
+    height: 100vh;
+    margin: 0;
+
+    &__error{
+        color: rgba(245, 1, 1, 0.5);
+    }
+
+    &__form {
+        background: transparent;
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        width: 350px;
+        height: 450px;
+        border-radius: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);    
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--color-light);
+    }
+
+    &__label{
+        display: flex;
+        font-weight: 500;
+        margin-top: 10px;
+        color: var(--color-light);
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 2px solid var(--color-dark);
+        border-radius: 5px;
+    }
+
+    &__button{
+        width: 100%;
+        padding: 10px;
+        border: 2px solid var(--color-dark);
+        border-radius: 5px;
+        margin-top: 30px;
+        background: rgba(245, 1, 1, 0.5);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 1s;
+
+        &:hover {
+            background: #000000;
+            color: rgba(245, 1, 1, 0.5);
+        }
+    }
+
+    &__select{
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 2px solid var(--color-dark);
+        border-radius: 5px;
+
+        &-group{
+            width: 100%;
+            display: flex;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+
+        &-day{
+            width: 25%;
+            border: 2px solid #000000;
+        }
+
+        &-month{
+            width: 40%;
+            margin-left: 10px;
+            border: 2px solid #000000;
+        }
+
+        &-year{
+            width: 30%;
+            margin-left: 10px;
+            border: 2px solid #000000;
+        }
+    }
+}

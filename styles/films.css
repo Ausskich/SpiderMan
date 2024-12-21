@@ -1,0 +1,470 @@
+@charset "UTF-8";
+/**
+    Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+    Убираем внутренние отступы слева тегам списков,
+    у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+    Убираем внешние отступы body и двум другим тегам,
+    у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+    Убираем внешние отступы вертикали нужным тегам,
+    у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+    Убираем стандартный маркер маркированному списку,
+    у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+    Обнуляем вертикальные внешние отступы параграфа,
+    объявляем локальную переменную для внешнего отступа вниз,
+    чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+    Внешний отступ вниз для параграфа без атрибута class,
+    который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+    Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+    Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+  height: 100%;
+  /**
+   Убираем скачок интерфейса по горизонтали
+   при появлении / исчезновении скроллбара
+  */
+  scrollbar-gutter: stable;
+}
+
+/**
+    Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+  min-height: 100%;
+  /**
+   Унифицированный интерлиньяж
+  */
+  line-height: 1.5;
+}
+
+/**
+    Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+    Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+    Приводим к единому цвету svg-элементы
+    (за исключением тех, у которых уже указан
+    атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not([fill=none],
+[fill^=url])) {
+  fill: currentColor;
+}
+
+/**
+    Приводим к единому цвету svg-элементы
+    (за исключением тех, у которых уже указан
+    атрибут stroke со значением 'none')
+ */
+:where([stroke]:not([stroke=none])) {
+  stroke: currentColor;
+}
+
+/**
+    Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+    Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+    Удаляем все анимации и переходы для людей,
+    которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-main: #1F2022;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-light-alt: #E1EBFB;
+  --color-light-h: #BFCDD4;
+  --color-accent: rgba(245, 1, 1, 0.5);
+  --color-accent-light: #f50101;
+  --color-grey: #475e69;
+  --color-grey-alt: #333E44;
+  --color-grey-light: #c4c4c4;
+  --color-gold: #ffc942;
+  --color-green: #21D789;
+  --color-blue: #009BFF;
+  --border-radius-menu-left: 10px 1000px 10px 1000px;
+  --border-radius-menu-right: 1000px 10px 1000px 10px;
+  --border-radius-keys: 4px;
+  --border-radius-actor: 30px;
+  --border-radius-btn: 8px;
+  --border-radius-profile: 50px;
+  --font-family-base: "Poppins", sans-serif;
+  --font-family-rarely: "Montserrat", sans-serif;
+  --container-width: 1240px;
+  --container-padding-x: 100px;
+  --section-margin-y: 40px;
+  --button-height-normal: 45px;
+  --button-height-small: 33px;
+  --transition-duration: 0.5s;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+html {
+  scrollbar-color: #f50101 #000000;
+}
+
+body {
+  font-size: clamp(14px, 1.6666666667vw, 24px);
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.28;
+  background-color: var(--color-main);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.film {
+  display: flex;
+  margin: 40px auto;
+  padding: 40px;
+  width: 1200px;
+  height: 530px;
+  background-color: var(--color-dark);
+}
+.film__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 780px;
+  height: 450px;
+  margin-left: 40px;
+  background-color: var(--color-light-alt);
+}
+.film__header-item {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  font-size: 32px;
+  color: var(--color-dark);
+}
+.film__descriptor-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25px;
+  flex-direction: column;
+  font-weight: 500;
+  width: 740px;
+  height: 360px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--color-grey-alt);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: var(--color-light);
+}
+.swiper-pagination-bullet {
+  background: var(--color-light);
+  width: 12px;
+  height: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.slider__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.slider__pict {
+  margin: 40px;
+}
+.slider__number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto;
+  width: 300px;
+  height: 40px;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-light);
+}
+.slider__heading {
+  margin: 20px auto;
+  width: 1000px;
+  height: 40px;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-light);
+}
+.slider__background-first {
+  background-image: url(../images/film-bg/bg-img-first.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-second {
+  background-image: url(../images/film-bg/bg-img-second.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-third {
+  background-image: url(../images/film-bg/bg-img-third.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-fourth {
+  background-image: url(../images/film-bg/bg-img-fourth.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-fifth {
+  background-image: url(../images/film-bg/bg-img-fifth.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-sixth {
+  background-image: url(../images/film-bg/bg-img-sixth.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-seventh {
+  background-image: url(../images/film-bg/bg-img-seventh.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}
+.slider__background-eighth {
+  background-image: url(../images/film-bg/bg-img-eight.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+}

@@ -1,0 +1,24 @@
+
+.scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none; /* Скрыто по умолчанию */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scrollTop.show {
+    display: block;
+}
+
+.scrollTop:hover{
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}

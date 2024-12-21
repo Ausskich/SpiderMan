@@ -1,0 +1,100 @@
+.swiper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &-slide{
+        @include flex-center;
+    }
+
+    &-button-next,
+    &-button-prev{
+        color: var(--color-light);
+    }
+
+    &-pagination-bullet{
+        background: var(--color-light);
+        width: 12px;
+        height: 12px;
+        transition: background-color 0.3s ease;
+    }
+
+}
+
+.slider{
+
+    &__group{
+        @include flex-center;
+        flex-direction: column;
+    }
+
+    &__pict{
+        margin: 40px;
+    }
+
+    &__number{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px auto;
+        width: 300px;
+        height: 40px;
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+        color: var(--color-light);
+    }
+
+    &__heading{
+        margin: 20px auto;
+        width: 1000px;
+        height: 40px;
+        font-size: 32px;
+        font-weight: 600;
+        text-align: center;
+        color: var(--color-light);
+    }
+
+    &__background{
+
+        &-first{
+            background-image: url(../images/film-bg/bg-img-first.svg);
+            @include slider-bg;
+        }
+
+        &-second{
+            background-image: url(../images/film-bg/bg-img-second.svg);
+            @include slider-bg;
+        }
+
+        &-third{
+            background-image: url(../images/film-bg/bg-img-third.svg);
+            @include slider-bg;
+        }
+
+        &-fourth{
+            background-image: url(../images/film-bg/bg-img-fourth.svg);
+            @include slider-bg;
+        }
+
+        &-fifth{
+            background-image: url(../images/film-bg/bg-img-fifth.svg);
+            @include slider-bg;
+        }
+
+        &-sixth{
+            background-image: url(../images/film-bg/bg-img-sixth.svg);
+            @include slider-bg;
+        }
+
+        &-seventh{
+            background-image: url(../images/film-bg/bg-img-seventh.svg);
+            @include slider-bg;
+        }
+
+        &-eighth{
+            background-image: url(../images/film-bg/bg-img-eight.svg);
+            @include slider-bg;
+        }
+    }
+}

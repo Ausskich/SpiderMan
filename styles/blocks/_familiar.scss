@@ -1,0 +1,54 @@
+.cards{
+    @include flex-center(false);
+    flex-direction: column;
+}
+
+.card{
+    display: flex;
+    margin: 20px 0;
+    width: 1000px;
+    height: 200px;
+    border-radius: var(--border-radius-btn);
+    background: var(--color-dark);
+
+    &__image{
+        display: flex;
+        margin: 10px 40px;
+        margin-right: 20px;
+    }   
+
+    &__body{
+        margin: 30px 40px;
+        margin-left: 20px;
+        width: 700px;
+        height: 140px;
+        border-radius: 5px;
+        background-color: rgba(245, 1, 1, 0.5);
+    }
+
+    &__header{
+        display: flex;
+        justify-content: center;
+        width: 700px;
+        height: 40px;
+
+        &-item{
+            font-size: 24px;
+            font-weight: 500;
+            color: #BFCDD4;
+        }
+    }   
+    
+    &__descriptor{
+        width: 700px;
+        height: 100px;
+
+        &-item{
+            padding: 0 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #000;
+        }
+    }
+
+}

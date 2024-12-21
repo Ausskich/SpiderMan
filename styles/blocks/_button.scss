@@ -1,0 +1,28 @@
+a{
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.new-page{
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-main);
+
+    &__button {
+        // margin: 0 auto;
+        margin-bottom: 40px;
+        width: 230px;
+        height: var(--button-height-normal);
+        font-size: 20px;
+        border-radius: var(--border-radius-btn);
+        background-color: var(--color-grey-alt);
+
+        &-link {
+            color: var(--color-light);
+        }
+    }
+
+    &__button:hover{
+        background-color: var(--color-dark);        
+    }
+}

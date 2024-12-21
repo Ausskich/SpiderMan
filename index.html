@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spider-Man</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <nav class="header__menu hidden-mobile">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item header__menu-item-left">
+                        <a class="header__menu-link" href="./super_hero.html">Супергерой</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item-left">
+                        <a class="header__menu-link" href="./films.html">Фильмы</a>
+                    </li>
+                    <li class="header__logo logo" >
+
+                        <a class="header__logo-link" href="./index.html">
+                            <img class="logo__image" src="images/header__logo.svg" alt="Spider" width="190" height="72" loading="lazy">
+                        </a>
+
+                    </li>
+                    <li class="header__menu-item header__menu-item-right">
+                        <a class="header__menu-link" href="/">Опрос</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item-right">
+                        <a class="header__menu-link" href="/">Персонажи</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button id="profileButton" class="header__button button button--transparent hodden-mobile"
+                    type="button">
+                <img src="images/user.svg" alt="profile" width="44" height="44" loading="lazy">
+            </button>
+            
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay">
+        <div class="modal" id="profileModal">
+            <div class="modal__body">
+                <div class="modal__wrapper-close">
+                    <button class="modal__close" id="closeModal">
+                        <div class="modal__img">
+                            <img class="modal__pict" src="./images/profile/x.svg" alt="cross" width="30" height="30" loading="lazy">
+                        </div>
+                    </button>
+                </div>
+            
+                <h1 class="modal__heading">Профиль</h1>
+            
+                <div class="modal__list">
+                    <p class="modal__item modal__item-min">Имя:
+                        <span class="user-data" id="username"></span>
+                    </p>
+            
+                    <p class="modal__item modal__item-big">Дата рождения:
+                        <span class="user-data" id="birth"></span>
+                    </p>
+            
+                    <p class="modal__item modal__item-min">Пол:
+                        <span class="user-data" id="gender"></span>
+                    </p>
+            
+                    <p class="modal__item modal__item-min">Последний результат теста:
+                        <span class="user-data" id=""></span>
+                    </p>
+                </div>
+            
+                <div class="modal__wrapper-logout">
+                    <button class="modal__logout" id="logoutButton">Выйти</button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+    <main class="content">
+        <section class="screensaver">
+            <div class="screensaver__body container">
+                <div class="screensaver__name">
+                    <span class="screensaver__name--gray">Настоящее имя:</span><br />
+                    <span class="screensaver__name--black">Питер Паркер</span>
+                </div>
+
+                <img class="screensaver__background" src="./images/screensaver/чп-big.svg"
+                    alt="bg" width="715" height="720" loading="lazy">
+        
+                <div class="screensaver__group screensaver__group--main">
+                    <span class="screensaver__group-role">Кумир поколений</span>
+                    <h1 class="screensaver__group-heading--right">Человек - паук</h1>
+                    <p class="screensaver__group-descriptor">
+                        Популярный супергерой из вселенной Marvel Comics,<br />
+                        созданный сценаристом Стэном Ли и художником Стивом<br />
+                        Дитко в 1962 году.
+                        Его первое появление состоялось в<br />
+                        комиксе Amazing Fantasy #15.</p>
+                </div>
+                <div class="screensaver__group screensaver__group--gallery">
+                    <h2 class="screensaver__group-heading--center">Кадры из фильмов</h2>
+                    <div class="screensaver__gallery">
+                        <div class="screensaver__gallery-item screensaver__gallery-item--top-left">
+                            <img class="screensaver__gallery-image" src="./images/screensaver/left-top.svg" alt="first-photo" width="222"
+                                height="124" loading="lazy">
+                        </div>
+                        <div class="screensaver__gallery-item screensaver__gallery-item--top-right">
+                            <img class="screensaver__gallery-image image-top-right" src="./images/screensaver/right-top.svg"
+                                alt="second-photo" width="222" height="124" loading="lazy">
+                        </div>
+                        <div class="screensaver__gallery-item screensaver__gallery-item--bottom-left">
+                            <img class="screensaver__gallery-image image-left-bottom" src="./images/screensaver/left-bottom.svg"
+                                alt="third-photo" width="222" height="124" loading="lazy">
+                        </div>
+                        <div class="screensaver__gallery-item screensaver__gallery-item--bottom-right">
+                            <img class="screensaver__gallery-image image-right-bottom" src="./images/screensaver/right-bottom.svg"
+                                alt="fourth-photo" width="222" height="124" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first">Самые популярные фильмы</h1>
+            <p class="heading__second">Каждый фильм собрал более 750 млн долларов в мировом прокате</p>
+        </section>
+
+        <section class="cards container">
+            <div class="cards__body">
+                <div class="cards__item">
+                    <img class="cards__item-pict" src="./images/cards/first-foto.svg" alt="pict" width="320" height="190">
+                    <div class="cards__item-header">
+                        <h1 class="cards__item-header__name">Новый Человек-паук</h1>
+                        <p class="cards__item-header__place cards__item-header__place--green">2nd</p>
+                    </div>
+                    <p class="cards__item-header__descriptor">
+                        Год выпуска: 2012 г. <br />
+                        Главный герой: Эндрю Гарфилд. <br />
+                        Производство: Columbia Pictures,<br /> Marvel Enterprises, Laura Ziskin<br /> Productions.<br />
+                    </p>
+                    <div class="cards__item-footer">
+                        <div class="cards__item-footer__actor">Эндрю Гарфилд</div>
+                        <div class="cards__item-footer__year">2012 г.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards__body">
+                <div class="cards__item">
+                    <img class="cards__item-pict" src="./images/cards/second-foto.svg" alt="pict" width="320" height="190">
+                    <div class="cards__item-header">
+                        <h1 class="cards__item-header__name cards__item-header_name--height">Человек-паук:
+                        Возвращение домой</h1>
+                        <p class="cards__item-header__place cards__item-header__place--gold">1st</p>
+                    </div>
+                    <p class="cards__item-header__descriptor">
+                        Год выпуска: 2017 г.<br />
+                        Главный герой: Том Холланд.<br />
+                        Производство: Columbia Pictures,<br /> Marvel Enterprises, Laura Ziskin<br /> Productions.<br />
+                    </p>
+                    <div class="cards__item-footer">
+                        <div class="cards__item-footer__actor">Том Холланд</div>
+                        <div class="cards__item-footer__year">2017 г.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards__body">
+                <div class="cards__item">
+                    <img class="cards__item-pict" src="./images/cards/third-foto.svg" alt="pict" width="320" height="190">
+                    <div class="cards__item-header">
+                        <h1 class="cards__item-header__name">Человек-паук 2</h1>
+                        <p class="cards__item-header__place cards__item-header__place--blue">3rd</p>
+                    </div>
+                    <p class="cards__item-header__descriptor">
+                        Год выпуска: 2004 г. <br />
+                        Главный герой: Тоби Магуайр. <br />
+                        Производство: Columbia Pictures,<br /> Marvel Enterprises, Laura Ziskin<br /> Productions.<br />
+                    </p>
+                    <div class="cards__item-footer">
+                        <div class="cards__item-footer__actor">Тоби Магуайр</div>
+                        <div class="cards__item-footer__year">2004 г.</div>
+                    </div>
+                </div>
+            </div>        
+        </section>
+
+        <section class="new-page container">
+            <button class="new-page__button">
+                <a class="new-page__button-link" href="/">Все фильмы</a>
+            </button>
+        </section>
+
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first">Самые популярные актеры</h1>
+            <p class="heading__second">Все трое появились в фильме "Человек-Паук: Нет пути домой" (2021), где они взаимодействовали друг с другом, объединяя
+            свои вселенные.</p>
+        </section>
+
+        <section class="actors container">
+            <div class="actors__item">
+                <h1 class="actors__name">Тоби Магуайр</h1>
+                <img class="actors__image" src="./images/actors/Тоби.svg" alt="Тоби" width="310" height="310" loading="lazy">
+                <div class="actors__info">
+                    <div class="actors__info-section actors__info-section--birthday">
+                        <div class="actors__info-header">Дата рождения:</div>
+                        <div class="actors__info-descriptor">27 июня 1975 года</div>
+                    </div>
+                    <div class="actors__info-section actors__info-section--place">
+                        <div class="actors__info-header">Место рождения:</div>
+                        <div class="actors__info-descriptor">Санта-Моника, Калифорния,<br /> США</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="actors__item">
+                <h1 class="actors__name">Том Холланд</h1>
+                <img class="actors__image" src="./images/actors/Том.svg" alt="Том" width="310" height="310" loading="lazy">
+                <div class="actors__info">
+                    <div class="actors__info-section actors__info-section--birthday">
+                        <div class="actors__info-header">Дата рождения:</div>
+                        <div class="actors__info-descriptor">1 июня 1996 года</div>
+                    </div>
+                    <div class="actors__info-section actors__info-section--place">
+                        <div class="actors__info-header">Место рождения:</div>
+                        <div class="actors__info-descriptor">Кингстон-апон-Темс,<br /> Великобритания</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="actors__item">
+                <h1 class="actors__name">Эндрю Гарфилд</h1>
+                <img class="actors__image" src="./images/actors/Эндрю.svg" alt="Эндрю" width="310" height="310" loading="lazy">
+                <div class="actors__info">
+                    <div class="actors__info-section actors__info-section--birthday">
+                        <div class="actors__info-header">Дата рождения:</div>
+                        <div class="actors__info-descriptor">20 августа 1983 года</div>
+                    </div>
+                    <div class="actors__info-section actors__info-section--place">
+                        <div class="actors__info-header">Место рождения:</div>
+                        <div class="actors__info-descriptor">Лос-Анджелес, Калифорния,<br /> США</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-page container">
+            <button class="new-page__button">
+                <a class="new-page__button-link" href="./pages/super_hero.html">Узнать больше</a>
+            </button>
+        </section>
+        
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first">Человек-паук: Нет пути домой (2021)</h1>
+            <p class="heading__second">Фильм стал одним из самых кассовых фильмов всех времён, собрав более $1.9 миллиарда.</p>
+        </section>
+
+        <section class="film container">
+            <div class="film__info film-card ">
+                <h1 class="film__info-header">Информация о фильме</h1>
+                <p class="film__info-descriptor">
+                    Год выпуска: 2021 г.<br />
+                    Главный герой: Том Холланд.<br />
+                    Режиссер: Джон Уоттс.<br />
+                    Бюджет фильма: $200 000 000<br />
+                    Сборы в США: $804 793 477<br />
+                    Время: 2ч 28м<br />
+                </p>
+                <button class="film__info-button">
+                    <a class="film__info-link" href="./super_hero.html">Узнать больше</a>
+                </button>
+            </div>
+        
+            <div class="film-card film__img">
+                <img class="film__img-pict" src="./images/films/last-film.svg" alt="pict" width="300" height="450">
+            </div>
+        
+            <div class="film-card film__about">
+                <h1 class="film__about-header">Кратко о сюжете</h1>
+                <p class="film__about-descriptor film__about-descriptor--right">
+                    Жизнь и репутация Питера Паркера<br />
+                    оказываются под угрозой, поскольку<br />
+                    Мистерио раскрыл всему миру тайну<br />
+                    личности Человека-паука. Пытаясь<br />
+                    исправить ситуацию, Питер обращается<br />
+                    за помощью к Стивену Стрэнджу, но<br />
+                    вскоре всё становится намного<br />
+                    опаснее..
+                </p>
+                <h1 class="film__about-header">Рейтинг фильма</h1>
+                <div class="film__about-stars">
+                    <img src="./images/films/gold.svg" alt="stars" width="32" height="32">
+                </div>
+                <div class="film__about-score">7.9</div>
+            </div>
+        </section>
+
+        <section class="new-page container">
+            <button class="new-page__button">
+                <a class="new-page__button-link" href="./films.html">Все фильмы</a>
+            </button>
+        </section>
+        
+        <section class="space"></section>
+
+        <section class="heading">
+            <h1 class="heading__first">Действующие актеры</h1>
+            <p class="heading__second">Ключевые фигуры новейшей истории.</p>
+        </section>
+
+        <section class="cards container">
+        
+            <div class="card">
+                <img class="card__img" src="./images/avatars/Питер.svg" alt="Piter" width="120" height="120" loading="lazy">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h1 class="card__header-name">Том Холланд</h1>
+                        <p class="card__header-role card__header-role--spider">Человек-паук</p>
+                    </div>
+                    <p class="card__descriptor">
+                        Подросток, совмещающий школьные<br /> заботы с ролью супергероя.
+                    </p>
+        
+                    <div class="card__keys">
+                        <div class="card__keys-item">Супермен</div>
+                        <div class="card__keys-item">Подросток</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img class="card__img" src="./images/avatars/Мей.svg" alt="Mey" width="120" height="120" loading="lazy">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h1 class="card__header-name">Мариса Томей</h1>
+                        <p class="card__header-role card__header-role--aunt">Тетя Мей</p>
+                    </div>
+                    <p class="card__descriptor">
+                        Мэй Паркер — символ заботы, тепла и<br /> семейных ценностей в жизни Питера.
+                    </p>
+        
+                    <div class="card__keys">
+                        <div class="card__keys-item">Тетя</div>
+                        <div class="card__keys-item">Наставница</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img class="card__img" src="./images/avatars/Эм джей.svg" alt="Emjay" width="120" height="120" loading="lazy">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h1 class="card__header-name">Зендея</h1>
+                        <p class="card__header-role card__header-role--beloved">Эм-Джей</p>
+                    </div>
+                    <p class="card__descriptor">
+                        Возлюбленная Питера Паркера и одна<br />
+                        из ключевых фигур в его жизни.
+                    </p>
+        
+                    <div class="card__keys">
+                        <div class="card__keys-item">Возлюбленная</div>
+                        <div class="card__keys-item">Модель</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <img class="card__img" src="./images/avatars/Джей.svg" alt="Djeimson" width="120" height="120" loading="lazy">
+                <div class="card__body">
+                    <div class="card__header">
+                        <h1 class="card__header-name">Джей Кей</h1>
+                        <p class="card__header-role card__header-role--editor">Джей Джеймсон</p>
+                    </div>
+                    <p class="card__descriptor">
+                        Редактор газеты Daily Bugle, известный<br /> своими нападками на Человека-паука.
+                    </p>
+        
+                    <div class="card__keys">
+                        <div class="card__keys-item">Редактор</div>
+                        <div class="card__keys-item">Упрямый</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-page container">
+            <button class="new-page__button">
+                <a class="new-page__button-link" href="/">Найти персонажа</a>
+            </button>
+        </section>
+
+    </main>
+
+    <div onclick="scrollToTop()" id="scrollTop" class="scrollTop">Вверх</div>
+    
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__main">
+
+                <div class="footer__contacts">
+                    <h2 class="footer__header">Contacts</h2>
+                    <p class="footer__contacts-item">
+                        <a class="footer__contacts-link" href="mailto:kakoi-to_tam@sobaka.com">
+                            kakoi-to_tam@sobaka.com
+                        </a>
+                    </p>
+                    <p class="footer__contacts-item">
+                        <a class="footer__contacts-link" href="tel:+91237231819">
+                            +9 (123) 723-18-19
+                        </a>
+                    </p>
+                </div>
+    
+                <div class="footer__social">
+                    <h2 class="footer__header">Follow Us</h2>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="http://" target="_blank" aria-label="Follow us on Instagram">
+                                <img class="footer__social-icon" src="./images/social/instagram.svg" alt="Instagram icon" width="32" height="32" loading="lazy">
+                            </a>
+                            <span class="footer__social-description">spider-man</span>
+                        </li>
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="http://" target="_blank" aria-label="Follow us on Twitter">
+                                <img class="footer__social-icon" src="./images/social/twitter.svg" alt="Twitter icon" width="32" height="32" loading="lazy">
+                            </a>
+                            <span class="footer__social-description">spider-man</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer__copyright">
+                <p class="footer__copyright-text">
+                    &copy; 2024 Bayguzhinov. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script/reDirecton.js"></script>
+    <script src="script/user.js"></script>
+    <script src="script/scrollTop.js"></script>
+</body>
+</html>

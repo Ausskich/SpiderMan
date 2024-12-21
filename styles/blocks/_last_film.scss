@@ -1,0 +1,113 @@
+
+img{
+    width: auto;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.film {
+    display: flex;
+    @include flex-center(false);
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 360px;
+        height: 490px;
+        margin: 50px 10px;
+        padding: 20px;
+        border-radius: 8px;
+        background: var(--color-dark);
+        color: var(--color-light-h);
+    }
+
+
+    &__info{
+
+
+        &-header{
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--color-light-h);
+        }
+
+        &-descriptor{
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin: 30px 0;
+            width: 320px;
+            height: 301px;
+            line-height: 3.3;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-grey);
+        }
+
+        &-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            border-radius: 4px;
+            background-color: var(--color-light-alt);
+            border-radius: var(--border-radius-btn);
+        }
+
+        &-button:hover{
+            background: var(--color-grey);
+        }
+
+        &-link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 154px;
+            height: 33px;
+        }
+
+        &-link:hover{
+            color: var(--color-light);
+        }
+    }
+
+    &__about{
+
+        &-header{
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--color-light-alt) ;
+        }
+
+        &-descriptor{
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin: 25px 0 15px 0;
+            line-height: 2;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-grey);
+
+            &--right{
+                text-align: right;
+            }
+        }
+
+        &-start{
+            display: flex;
+        }
+
+        &-score{
+            font-size: 40px;
+            font-weight: 600;
+            font-family: Arial, Helvetica, serif;
+        }
+
+    }
+}

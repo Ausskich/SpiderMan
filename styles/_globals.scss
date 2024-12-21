@@ -1,0 +1,26 @@
+html{
+    scrollbar-color: #f50101 #000000;
+}
+
+body {
+    @include fluid-text(24, 14);
+    
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.28;
+    background-color: var(--color-main);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
