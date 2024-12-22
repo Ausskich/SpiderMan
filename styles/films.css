@@ -307,7 +307,7 @@ svg * {
 }
 
 html {
-  scrollbar-color: #f50101 #000000;
+  scrollbar-color: rgba(245, 1, 1, 0.5) #000000 !important;
 }
 
 body {
