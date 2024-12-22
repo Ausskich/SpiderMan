@@ -1,71 +1,71 @@
 const characters = [
 	{
 		name: 'Питер Паркер / Человек-Паук (Том Холланд)',
-		image: '../images/search-items/tomi_1.svg',
+		image: './images/search-items/tomi.svg',
 	},
 	{
 		name: 'Питер Паркер / Человек-Паук (Тоби Магуайр)',
-		image: '../images/search-items/tobi_2.svg',
+		image: './images/search-items/tobi.svg',
 	},
 	{
 		name: 'Питер Паркер / Человек-Паук (Эндрю Гарфилд)',
-		image: '../images/search-items/endry_9.svg',
+		image: './images/search-items/endry.svg',
 	},
 	{
 		name: 'Зелёный Гоблин / Норман Озборн (Уильям Дефо)',
-		image: '../images/search-items/defo_3.svg',
+		image: './images/search-items/defo.svg',
 	},
 	{
 		name: 'Мэри Джейн Уотсон (Кирстен Данст)',
-		image: '../images/search-items/danst_4.svg',
+		image: './images/search-items/danst.svg',
 	},
 	{
 		name: 'Доктор Осьминог / Док Ок (Альфред Молина)',
-		image: '../images/search-items/molino_5.svg',
+		image: './images/search-items/molino.svg',
 	},
 	{
 		name: 'Веном / Эдди Брок (Тофер Грейс)',
-		image: '../images/search-items/grays_6.svg',
+		image: './images/search-items/grays.svg',
 	},
 	{
 		name: 'Человек-Песок / Флинт Марко (Томас Хейден Чёрч)',
-		image: '../images/search-items/tomas_7.svg',
+		image: './images/search-items/tomas.svg',
 	},
 	{
 		name: 'Новый Зелёный Гоблин / Гарри Озборн (Джеймс Франко)',
-		image: '../images/search-items/jaaims_8.svg',
+		image: './images/search-items/jaaims.svg',
 	},
 	{
 		name: 'Ящерица / Доктор Коннорс (Рис Ифанс)',
-		image: '../images/search-items/ris_10.svg',
+		image: './images/search-items/ris.svg',
 	},
 	{
 		name: 'Гвен Стейси (Эмма Стоун)',
-		image: '../images/search-items/gven_11.svg',
+		image: './images/search-items/gven.svg',
 	},
 	{
 		name: 'Электро / Макс Диллон (Джейми Фокс)',
-		image: '../images/search-items/blu_12.svg',
+		image: './images/search-items/blu.svg',
 	},
 	{
 		name: 'Гарри Озборн / Зелёный Гоблин (Дэйн Дехаан)',
-		image: '../images/search-items/dehan_13.svg',
+		image: './images/search-items/dehan.svg',
 	},
 	{
 		name: 'Вулкан / Адриан Тумс (Майкл Китон)',
-		image: '../images/search-items/mikle_14.svg',
+		image: './images/search-items/mikle.svg',
 	},
 	{
 		name: 'Тони Старк / Железный Человек (Роберт Дауни-младший)',
-		image: '../images/search-items/daun_15.svg',
+		image: './images/search-items/daun.svg',
 	},
 	{
 		name: 'Мистерио / Квентин Бек (Джейк Джилленхол)',
-		image: '../images/search-items/jake_16.svg',
+		image: './images/search-items/jake.svg',
 	},
 	{
 		name: 'Доктор Стрэндж (Бенедикт Камбербэтч)',
-		image: '../images/search-items/xzlol_17.svg',
+		image: './images/search-items/xzlol.svg',
 	},
 ]
 
