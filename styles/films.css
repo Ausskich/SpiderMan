@@ -332,6 +332,10 @@ a {
   color: inherit;
 }
 
+html {
+  scrollbar-color: rgba(245, 1, 1, 0.5) #000000;
+}
+
 .film {
   display: flex;
   margin: 40px auto;
