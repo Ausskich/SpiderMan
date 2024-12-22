@@ -1,0 +1,40 @@
+
+.character{
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+        padding: 40px;
+    }
+
+    &__card {
+        padding: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        background-color: #fff;
+        color: #000;
+    
+    
+        &-pict {
+            display: block;
+            margin: 0 auto;
+            width: 180px;
+            height: 180px;
+        }
+        
+        &-heading {
+            font-size: 24px;
+            color: #000;
+            margin: 10px 0 5px;
+        }
+        
+        &-descriptor {
+            margin: 0;
+            font-size: 20px;
+            color: #0f0e0e;
+        }
+
+    }
+
+}

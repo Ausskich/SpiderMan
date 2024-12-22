@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/dict.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <nav class="header__menu hidden-mobile">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item header__menu-item-left">
+                        <a class="header__menu-link" href="./super_hero.html">Супергерой</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item-left">
+                        <a class="header__menu-link" href="./films.html">Фильмы</a>
+                    </li>
+                    <li class="header__logo logo">
+    
+                        <a class="header__logo-link" href="./index.html">
+                            <img class="logo__image" src="images/header__logo.svg" alt="Spider" width="190" height="72"
+                                loading="lazy">
+                        </a>
+    
+                    </li>
+                    <li class="header__menu-item header__menu-item-right">
+                        <a class="header__menu-link" href="./quiz.html">Опрос</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item-right">
+                        <a class="header__menu-link" href="./dict.html">Персонажи</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <button id="profileButton" class="header__button button button--transparent" type="button">
+                <img src="images/user.svg" alt="profile" width="44" height="44" loading="lazy">
+            </button>
+    
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay">
+        <div class="modal" id="profileModal">
+            <div class="modal__body">
+                <div class="modal__wrapper-close">
+                    <button class="modal__close" id="closeModal">
+                        <div class="modal__img">
+                            <img class="modal__pict" src="./images/profile/x.svg" alt="cross" width="30" height="30"
+                                loading="lazy">
+                        </div>
+                    </button>
+                </div>
+    
+                <h1 class="modal__heading">Профиль</h1>
+    
+                <div class="modal__list">
+                    <p class="modal__item modal__item-min">Имя:
+                        <span class="user-data" id="username"></span>
+                    </p>
+    
+                    <p class="modal__item modal__item-big">Дата рождения:
+                        <span class="user-data" id="birth"></span>
+                    </p>
+    
+                    <p class="modal__item modal__item-min">Пол:
+                        <span class="user-data" id="gender"></span>
+                    </p>
+    
+                    <p class="modal__item modal__item-min">Последний результат теста:
+                        <span class="user-data" id="lastTestResult"></span>
+                    </p>
+                </div>
+    
+                <div class="modal__wrapper-logout">
+                    <button class="modal__logout" id="logoutButton">Выйти</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <main class="content">
+
+        <section class="heading heading__first--full">
+            <h1 class="heading__first heading__first--full ">Найди любимого персонажа</h1>
+        </section>
+
+        <section class="search container "> 
+            <div class="search__container">
+                <input class="search__input" type="text" id="search" placeholder="Поиск...">
+            </div>
+            <div class="character__grid" id="character-grid">
+                <!--Карточки -->
+            </div>
+        </section>
+    </main>
+
+    <div onclick="scrollToTop()" id="scrollTop" class="scrollTop">Вверх</div>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__main">
+
+                <div class="footer__contacts">
+                    <h2 class="footer__header">Контакты</h2>
+                    <p class="footer__contacts-item">
+                        <a class="footer__contacts-link" href="mailto:kakoi-to_tam@sobaka.com">
+                            kakoi-to_tam@sobaka.com
+                        </a>
+                    </p>
+                    <p class="footer__contacts-item">
+                        <a class="footer__contacts-link" href="tel:+91237231819">
+                            +9 (123) 723-18-19
+                        </a>
+                    </p>
+                </div>
+    
+                <div class="footer__social">
+                    <h2 class="footer__header">Соц Сети</h2>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="https:/vk.com/dan.ploti" target="_blank" aria-label="Follow me on VK">
+                                <img class="footer__social-icon" src="./images/social/vk.svg" alt="VK icon" width="32" height="32" loading="lazy">
+                            </a>
+                            <span class="footer__social-description">я в вк</span>
+                        </li>
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="https://t.me/By_DV" target="_blank" aria-label="Follow me on Telegram">
+                                <img class="footer__social-icon" src="./images/social/telegram.svg" alt="Telegram icon" width="32" height="32" loading="lazy">
+                            </a>
+                            <span class="footer__social-description">я в тг</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer__copyright">
+                <p class="footer__copyright-text">
+                    &copy; 2024 Bayguzhinov. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./script/user.js"></script>
+    <script src="./script/reDirecton.js"></script>
+    <script src="./script/scrollTop.js"></script>
+    <script src="./script/dict.js"></script>
+</body>
+
+</html>
