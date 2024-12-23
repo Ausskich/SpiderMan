@@ -100,6 +100,17 @@
         </section>
     </main>
 
+    <div class="overlay" id="characterOverlay">
+        <div class="character-modal" id="characterModal">
+            <div class="character-modal__body">
+                <button class="character-modal__close" id="closeCharacterModal">Закрыть</button>
+                <img class="character-modal__image" id="characterImage" alt="Character Image">
+                <h2 class="character-modal__title" id="characterTitle"></h2>
+                <p class="character-modal__description" id="characterDescription"></p>
+            </div>
+        </div>
+    </div>
+
     <div onclick="scrollToTop()" id="scrollTop" class="scrollTop">Вверх</div>
 
     <footer class="footer">
@@ -147,10 +158,10 @@
         </div>
     </footer>
     
+    <script src="./script/dict.js"></script>
     <script src="./script/user.js"></script>
     <script src="./script/reDirecton.js"></script>
     <script src="./script/scrollTop.js"></script>
-    <script src="./script/dict.js"></script>
 </body>
 
 </html>

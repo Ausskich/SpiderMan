@@ -26,11 +26,11 @@ const characters = [
 	{
 		name: 'Веном / Эдди Брок (Тофер Грейс)',
 		image: './images/search-items/grays.svg',
-	},
+		},
 	{
 		name: 'Человек-Песок / Флинт Марко (Томас Хейден Чёрч)',
 		image: './images/search-items/tomas.svg',
-	},
+		},
 	{
 		name: 'Новый Зелёный Гоблин / Гарри Озборн (Джеймс Франко)',
 		image: './images/search-items/jaaims.svg',
@@ -46,6 +46,7 @@ const characters = [
 	{
 		name: 'Электро / Макс Диллон (Джейми Фокс)',
 		image: './images/search-items/blu.svg',
+
 	},
 	{
 		name: 'Гарри Озборн / Зелёный Гоблин (Дэйн Дехаан)',
@@ -69,30 +70,57 @@ const characters = [
 	},
 ]
 
-const characterGrid = document.getElementById('character-grid');
-const searchInput = document.getElementById('search');
+const characterGrid = document.getElementById('character-grid')
+const searchInput = document.getElementById('search')
+const characterOverlay = document.getElementById('characterOverlay')
+const characterModal = document.getElementById('characterModal')
+const closeCharacterModal = document.getElementById('closeCharacterModal')
+const characterImage = document.getElementById('characterImage')
+const characterTitle = document.getElementById('characterTitle')
+const characterDescription = document.getElementById('characterDescription')
 
-function renderCharacters(filter = "") {
-    characterGrid.innerHTML = "";
-    const filteredCharacters = characters.filter(character =>
-        character.name.toLowerCase().includes(filter.toLowerCase())
-    );
+function renderCharacters(filter = '') {
+	characterGrid.innerHTML = ''
+	const filteredCharacters = characters.filter(character =>
+		character.name.toLowerCase().includes(filter.toLowerCase())
+	)
 
-    filteredCharacters.forEach(character => {
-        const [characterName, actorName] = character.name.split(" (");
-        const card = document.createElement('div');
-        card.className = 'character__card';
-        card.innerHTML = `
+	filteredCharacters.forEach(character => {
+		const [characterName, actorName] = character.name.split(' (')
+		const card = document.createElement('button')
+		card.className = 'character__card'
+		card.innerHTML = `
             <img class="character__card-pict" src="${character.image}" alt="${characterName}" loading="lazy">
-            <h2 class="character__card-heading" >${characterName}</h2>
-            <p class="character__card-descriptor" >${actorName ? `(${actorName}`.replace(/\)$/g, ")") : ""}</p>
-        `;
-        characterGrid.appendChild(card);
-    });
+            <h2 class="character__card-heading">${characterName}</h2>
+            <p class="character__card-descriptor">${
+							actorName ? `(${actorName}`.replace(/\)$/g, ')') : ''
+						}</p>
+        `
+		card.addEventListener('click', () => openCharacterModal(character))
+		characterGrid.appendChild(card)
+	})
 }
 
-searchInput.addEventListener('input', (e) => {
-    renderCharacters(e.target.value);
-});
+function openCharacterModal(character) {
+	characterImage.src = character.image
+	characterTitle.textContent = character.name.split(' (')[0]
+	characterDescription.textContent = 'Какой-то текст' 
+	characterOverlay.style.display = 'flex'
+	characterModal.style.display = 'block'
+}
 
-renderCharacters();
+function closeModal() {
+	characterOverlay.style.display = 'none'
+	characterModal.style.display = 'none'
+}
+
+closeCharacterModal.addEventListener('click', closeModal)
+characterOverlay.addEventListener('click', e => {
+	if (e.target === characterOverlay) closeModal()
+})
+
+searchInput.addEventListener('input', e => {
+	renderCharacters(e.target.value)
+})
+
+renderCharacters()
